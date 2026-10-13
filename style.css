@@ -1,0 +1,99 @@
+:root
+{
+    /* background: #000; */
+    color: white;
+    color-scheme: dark;
+    --padder: 32px;
+}
+
+a
+{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: aqua;
+}
+
+.row
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.column
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.center
+{
+    display: flex;
+    justify-content: center;
+}
+
+.container
+{
+    max-width: 1000px;
+    padding-inline: var(--padder);
+    margin-inline: auto;
+}
+
+.stretch::after
+{
+    content: "";
+    position: absolute;
+    inset: 0px;
+}
+
+.grid-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2em;
+}
+
+.systems-container
+{
+    grid-template-columns: 1fr 1fr;
+}
+
+.project-container
+{
+    position: relative;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#Project
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#Project img
+{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#Project a
+{
+    padding-top: 1em;
+}
+
+.project-description
+{
+    padding: 0px 1em;
+}
+
+.project-name
+{
+    display: list-item;
+    list-style-position: inside;
+}
