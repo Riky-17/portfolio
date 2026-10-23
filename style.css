@@ -6,6 +6,11 @@
     --padder: 32px;
 }
 
+body
+{
+    margin: 0;
+}
+
 a
 {
     color: white;
@@ -15,6 +20,11 @@ a
 a:hover
 {
     color: aqua;
+}
+
+h1
+{
+    margin-bottom: 2em;
 }
 
 .row
@@ -37,9 +47,14 @@ a:hover
 
 .container
 {
-    max-width: 1000px;
+    max-width: 1300px;
     padding-inline: var(--padder);
     margin-inline: auto;
+}
+
+.small-container
+{
+    padding: 10px 20px;
 }
 
 .stretch::after
@@ -49,11 +64,35 @@ a:hover
     inset: 0px;
 }
 
+.wrap-row
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+header
+{
+    z-index: 10;
+    position: sticky;
+    top: 0px;
+    background-color: #5430cf8c;
+    backdrop-filter: blur(14px)saturate(1.4);
+}
+
+section
+{
+    padding-top: 100px;
+}
+
 .grid-container
 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
 }
 
 .systems-container
@@ -63,14 +102,36 @@ a:hover
 
 .project-container
 {
+    margin-bottom: 2em;
+    break-inside: avoid;
+    page-break-inside: avoid;
     position: relative;
     background-color: black;
     border: 2px solid white;
     border-radius: 5px;
+    transition: transform 0.15s ease;
+}
+
+.project-container:hover
+{
+    transform: scale(1.05);
+}
+
+.project-description:hover
+{
+    border-image-source: url(/Images/border.png);
+    border-image-slice: 64 fill;
+    border-image-width: 64px;
+    border-image-repeat: stretch;
+
+    image-rendering: pixelated;
+    color: white;
 }
 
 #Project
 {
+    height: 100%;
+    width: 450px;
     display: flex;
     flex-direction: column;
 }
@@ -89,11 +150,21 @@ a:hover
 
 .project-description
 {
-    padding: 0px 1em;
+    min-height: 150px;
+    flex: 1;
+    padding: 0px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.project-name
+.skill-card
 {
-    display: list-item;
-    list-style-position: inside;
+    width: 30%;
+    background-color: black;
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 5px;
+    text-align: center;
 }
