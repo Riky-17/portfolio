@@ -22,11 +22,6 @@ a:hover
     color: aqua;
 }
 
-h1
-{
-    margin-bottom: 2em;
-}
-
 .row
 {
     display: flex;
@@ -45,10 +40,18 @@ h1
     justify-content: center;
 }
 
+.border
+{
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+}
+
 .container
 {
     max-width: 1300px;
     padding-inline: var(--padder);
+    margin: 4em;
     margin-inline: auto;
 }
 
@@ -82,9 +85,9 @@ header
     backdrop-filter: blur(14px)saturate(1.4);
 }
 
-section
+header>.container
 {
-    padding-top: 100px;
+    margin-top: 0px;
 }
 
 .grid-container
@@ -168,3 +171,33 @@ section
     border-radius: 5px;
     text-align: center;
 }
+
+.main-divider
+{
+    width: 100%;
+}
+
+ol
+{
+    margin: 3em 0px;
+    padding: 0px 40px;
+    list-style-position: inside;
+}
+
+ol ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;;
+}
+
+ol ul > li + li::before
+{
+    content: "·";
+    margin: 0 .5em;
+}
+
+/* ol ul > li:first-child
+{
+    list-style: none;
+} */
