@@ -6,163 +6,178 @@
         <script src="https://kit.fontawesome.com/407aa751ac.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header>
+        <!-- <header>
             <div class="container row center">
                 <p>Riccardo Spadaro</p>
             </div>
-        </header>
+        </header> -->
         <main>
-            <div id="Introduction" class="container column center">
-                <h1>Riccardo Spadaro</h1>
-                <h3>Game Programmer | Unity Engine</h3>
-                <p>Hi, my name is Riccardo and I am a Unity game programmer with experience in creating games in C#, I specialize in building game mechanics and systems and I also have a strong understanding of physics, math and game AI.</p>
+            <div id="image-background">
+                <img src="Images/tentacle monster.png" alt="monster">
+                <img src="Images/tentacle monster.png" alt="monster">
+                <img src="Images/tentacle monster.png" alt="monster">
             </div>
-            <section>
-                <h1 class="center">Featured Projects</h1>
-                <div class="container">
-                    <h2>Games</h2>
-                    <div class="container wrap-row">
-                        <div class="project-container">
-                            <article id="Project">
-                                <div class="center project-image-container">
-                                    <img src="Images/Nazrin's Quest Cover.png" alt="Nazrin's Quest">
-                                </div>
-                                <div class="project-description">
-                                    <a href="Projects/Frogeth.html" class="project-name stretch">Nazrin's Quest</a>
-                                    <p>Description.</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="project-container">
-                            <article id="Project">
-                                <div class="center project-image-container">
-                                    <img src="Images/Gwumbus Cover.png" alt="Gwumbus">
-                                </div>
-                                <div class="project-description">
-                                    <a href="Projects/Frogeth.html" class="project-name stretch">Gwumbus</a>
-                                    <p>An action 2D game about a warrior trying to defeat death.</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="project-container">
-                            <article id="Project">
-                                <div class="center project-image-container">
-                                    <img src="Images/Frogeth cover.png" alt="Frogeth">
-                                </div>
-                                <div class="project-description">
-                                    <a href="Projects/Frogeth.html" class="project-name stretch">Frogeth</a>
-                                    <p>A cozy puzzle game about a frog trying to reach his love.</p>
-                                    <ul></ul>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
+            <canvas id="reveal-canvas"></canvas>
+            <div id="page-container">
+                <div id="Introduction" class="container column center">
+                    <h1>Riccardo Spadaro</h1>
+                    <h3>Game Programmer | Unity Engine</h3>
+                    <p>Hi, my name is Riccardo and I am a Unity game programmer with experience in creating games in C#, I specialize in building game mechanics and systems and I also have a strong understanding of physics, math and game AI.</p>
                 </div>
-                <div class="container">
-                    <h2>Systems</h2>
-                    <div class="wrap-row container systems-container">
-                        <div class="project-container">
-                            <article id="Project">
-                                <div class="center">
-                                    <img src="Images/stock.png" alt="A* Pathfinder">
-                                </div>
-                                <div class="project-description">
-                                    <h3 class="project-name">A* Pathfinder</h3>
-                                    <p>A* Pathfinder algorithm using Unity's Job System to multithread the algorithm.</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="project-container">
-                            <article id="Project">
-                                <div class="center">
-                                    <img src="Images/stock.png" alt="Wave Function Collapse">
-                                </div>
-                                <div class="project-description">
-                                    <h3 class="project-name">Wave Function Collapse</h3>
-                                    <p>Wave Function Collapse algorithm multithreaded using compute shaders.</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <h1 class="center">What I bring</h1>
-                <div class="container wrap-row">
-                    <div class="skill-card small-container">
-                        <h2>Technical Skills</h2>
-                        <p>I enjoy taking on complex programming challenges, from gameplay systems and game AI to procedural generation and performance optimization.</p>
-                    </div>
-                    <div class="skill-card small-container">
-                        <h2>Performance</h2>
-                        <p>I consider performance and scalability when designing systems, while also making sure that the code is readable and easy to understand.</p>
-                    </div>
-                    <div class="skill-card small-container">
-                        <h2>Time Management</h2>
-                        <p>Having served as the sole programmer on multiple game jam projects, I'm comfortable implementing gameplay systems under tight deadlines.</p>
-                    </div>
-                </div>
-                <div class="container border">
-                    <h1 class="center">Skills</h1>
-                    <hr class="main-divider">
-                    <ol>
-                        <h3>
-                            <li>Game Programming</li>
-                        </h3>
-                        <ul>
-                            <li>Unity</li>
-                            <li>C#</li>
-                            <li>Gameplay Systems</li>
-                            <li>Game Mechanics</li>
-                            <li>Development Tool Programming</li>
-                        </ul>
-                        <hr>
-                        <h3>
-                            <li>Algorithms & Performance</li>
-                        </h3>
-                        <ul>
-                            <li>Pathfinding</li>
-                            <li>Unity Job System</li>
-                            <li>Multithreading</li>
-                            <li>Compute SHaders</li>
-                            <li>Procedural Generation</li>
-                            <li>Wave Function Collapse</li>
-                            <li>Behaviour Tree</li>
-                        </ul>
-                        <hr>
-                        <h3>
-                            <li>Game Systems</li>
-                        </h3>
-                        <ul>
-                            <li>Game AI</li>
-                            <li>State Machines</li>
-                            <li>Physics</li>
-                            <li>UI</li>
-                            <li>Input System</li>
-                        </ul>
-                        <hr>
-                        <h3>
-                            <li>Development Workflow</li>
-                        </h3>
-                        <ul>
-                            <li>Git</li>
-                            <li>Debugging</li>
-                            <li>Profiling</li>
-                            <li>Team Collaboration</li>
-                            <li>Rapid Prototyping</li>
-                        </ul>
-                    </ol>
-                </div>
-            </section>
-            <section>
-                <div class="contacts-container">
-                    <h2 class="center">Get in Contact</h2>
-                    <h3 class="center">riccardospadaro58@gmail.com</h3>
+                <section>
+                    <h1 class="center">Featured Projects</h1>
                     <div class="container">
-                        <i class="fa-brands fa-itch-io"></i>
+                        <h2>Games</h2>
+                        <div class="container wrap-row">
+                            <div class="project-container">
+                                <article id="Project">
+                                    <div class="center project-image-container">
+                                        <img src="Images/Nazrin's Quest Cover.png" alt="Nazrin's Quest">
+                                    </div>
+                                    <div class="project-description">
+                                        <a href="Projects/Frogeth.html" class="project-name stretch">Nazrin's Quest</a>
+                                        <p>Description.</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="project-container">
+                                <article id="Project">
+                                    <div class="center project-image-container">
+                                        <img src="Images/Gwumbus Cover.png" alt="Gwumbus">
+                                    </div>
+                                    <div class="project-description">
+                                        <a href="Projects/Frogeth.html" class="project-name stretch">Gwumbus</a>
+                                        <p>An action 2D game about a warrior trying to defeat death.</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="project-container">
+                                <article id="Project">
+                                    <div class="center project-image-container">
+                                        <img src="Images/Frogeth cover.png" alt="Frogeth">
+                                    </div>
+                                    <div class="project-description">
+                                        <a href="Projects/Frogeth.html" class="project-name stretch">Frogeth</a>
+                                        <p>A cozy puzzle game about a frog trying to reach his love.</p>
+                                        <ul></ul>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
+                    <div class="container">
+                        <h2>Systems</h2>
+                        <div class="wrap-row container systems-container">
+                            <div class="project-container">
+                                <article id="Project">
+                                    <div class="center">
+                                        <img src="Images/stock.png" alt="A* Pathfinder">
+                                    </div>
+                                    <div class="project-description">
+                                        <h3 class="project-name">A* Pathfinder</h3>
+                                        <p>A* Pathfinder algorithm using Unity's Job System to multithread the algorithm.</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="project-container">
+                                <article id="Project">
+                                    <div class="center">
+                                        <img src="Images/stock.png" alt="Wave Function Collapse">
+                                    </div>
+                                    <div class="project-description">
+                                        <h3 class="project-name">Wave Function Collapse</h3>
+                                        <p>Wave Function Collapse algorithm multithreaded using compute shaders.</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h1 class="center">What I bring</h1>
+                    <div class="container wrap-row">
+                        <div class="skill-card small-container">
+                            <h2>Technical Skills</h2>
+                            <p>I enjoy taking on complex programming challenges, from gameplay systems and game AI to procedural generation and performance optimization.</p>
+                        </div>
+                        <div class="skill-card small-container">
+                            <h2>Performance</h2>
+                            <p>I consider performance and scalability when designing systems, while also making sure that the code is readable and easy to understand.</p>
+                        </div>
+                        <div class="skill-card small-container">
+                            <h2>Time Management</h2>
+                            <p>Having served as the sole programmer on multiple game jam projects, I'm comfortable implementing gameplay systems under tight deadlines.</p>
+                        </div>
+                    </div>
+                    <div class="container border">
+                        <h1 class="center">Skills</h1>
+                        <hr class="main-divider">
+                        <ol>
+                            <h3>
+                                <li>Game Programming</li>
+                            </h3>
+                            <ul>
+                                <li>Unity</li>
+                                <li>C#</li>
+                                <li>Gameplay Systems</li>
+                                <li>Game Mechanics</li>
+                                <li>Development Tool Programming</li>
+                            </ul>
+                            <hr>
+                            <h3>
+                                <li>Algorithms & Performance</li>
+                            </h3>
+                            <ul>
+                                <li>Pathfinding</li>
+                                <li>Unity Job System</li>
+                                <li>Multithreading</li>
+                                <li>Compute SHaders</li>
+                                <li>Procedural Generation</li>
+                                <li>Wave Function Collapse</li>
+                                <li>Behaviour Tree</li>
+                            </ul>
+                            <hr>
+                            <h3>
+                                <li>Game Systems</li>
+                            </h3>
+                            <ul>
+                                <li>Game AI</li>
+                                <li>State Machines</li>
+                                <li>Physics</li>
+                                <li>UI</li>
+                                <li>Input System</li>
+                            </ul>
+                            <hr>
+                            <h3>
+                                <li>Development Workflow</li>
+                            </h3>
+                            <ul>
+                                <li>Git</li>
+                                <li>Debugging</li>
+                                <li>Profiling</li>
+                                <li>Team Collaboration</li>
+                                <li>Rapid Prototyping</li>
+                            </ul>
+                            <hr>
+                        </ol>
+                    </div>
+                </section>
+                <section>
+                    <div class="contacts-container">
+                        <h2 class="center">Get in touch!</h2>
+                        <h3 class="center">riccardospadaro58@gmail.com</h3>
+                        <div class="container center">
+                            <a href="https://riki-17.itch.io/" class=" icon">
+                                <i class="fa-brands fa-itch-io fa-3x"></i>
+                            </a>
+                            <a href="https://github.com/Riky-17" class=" icon">
+                                <i class="fa-brands fa-github fa-3x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
     </body>
+    <script src="script.js"></script>
 </html>
