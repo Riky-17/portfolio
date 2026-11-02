@@ -33,6 +33,16 @@ window.addEventListener("load", () =>
     
     const ripples = [];
 
+    function easeIn(t, maxT = 1)
+    {
+        return t * t / (maxT * maxT);
+    }
+
+    function easeOut(t, maxT = 1)
+    {
+        return 1 - Math.pow(1 - t / maxT, 2);
+    }
+
     document.addEventListener("mousemove", (event) =>
     {
         const now = performance.now();
@@ -43,7 +53,7 @@ window.addEventListener("load", () =>
         {
             const dx = x - lastX;
             const dy = y - lastY;
-            const dt = now - lastTime;
+            const dt =  now - lastTime;
 
             if(dt > 0)
             {
@@ -80,11 +90,11 @@ window.addEventListener("load", () =>
         for (let i = ripples.length - 1; i >= 0; i--) 
         {
             const r = ripples[i];
-            const age = now - r.born;
-            console.log(age);
+            const age = Math.max(0, (now - r.born) / 1000);
+            const rippleDuration = 3;
             
-            r.radius = RIPPLE_RADIUS + age * 0.18;
-            r.alpha = 0.8 * Math.max(0, 1 - age / 1200);
+            r.radius = 200 * easeOut(age, rippleDuration);
+            r.alpha = Math.max(0, 1 - easeIn(age, rippleDuration));
 
             if(r.alpha <= 0)
             {
@@ -104,8 +114,8 @@ window.addEventListener("load", () =>
             // gradient.addColorStop(0.95, "rgba(255,255,255,1)");
             // gradient.addColorStop(1, "rgba(255,255,255,1)");
             
-            ctx.globalCompositeOperation = "source-over";
-            ctx.fillStyle = "blue";
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.fillStyle = gradient;
             ctx.beginPath();
             ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
             ctx.fill();
@@ -117,8 +127,8 @@ window.addEventListener("load", () =>
             
             borderGradient.addColorStop(0, "rgba(255,255,255,0)");
             borderGradient.addColorStop(0.5, "rgba(255,255,255,0)");
-            borderGradient.addColorStop(0.5, "rgba(255,255,255,1)");
-            borderGradient.addColorStop(1, "rgba(255,255,255,1)");
+            borderGradient.addColorStop(0.5, `rgba(255,255,255,${1 - easeOut(age, rippleDuration)})`);
+            borderGradient.addColorStop(1, `rgba(255,255,255,${1 - easeOut(age, rippleDuration)})`);
 
             // borderGradient.addColorStop(0, "rgba(255,255,255,0)");
             // borderGradient.addColorStop(0.4, "rgba(255,255,255,0.8)");
@@ -139,28 +149,46 @@ window.addEventListener("load", () =>
     requestAnimationFrame(animate);
 
     
-    // function test()
-    // {
-    //     ctx.fillStyle = "black";
-    //     ctx.fillRect(0, 0, width, height);
-    //     const gradient = ctx.createRadialGradient(
-    //         47, 45, 0,
-    //         47, 45, 40
-    //     );
+    function test()
+    {
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, width, height);
+        const gradient = ctx.createRadialGradient(
+            1000, 300, 50,
+            1000, 300, 100
+        );
         
-    //     gradient.addColorStop(0, `rgba(255,255,255,0.8)`);
-    //     gradient.addColorStop(0.55, `rgba(255,255,255,0.5)`);
-    //     gradient.addColorStop(1, "rgba(255,255,255,0)");
+        // gradient.addColorStop(0, `rgba(255,255,255,0.8)`);
+        // gradient.addColorStop(0.55, `rgba(255,255,255,0.5)`);
+        // gradient.addColorStop(1, "rgba(255,255,255,0)");
 
-    //     ctx.globalCompositeOperation = "destination-out";
+        
+        // gradient.addColorStop(0, "rgba(255,255,255,0.8)");
+        // gradient.addColorStop(0.55, "rgba(255,255,255,0.4)");
+        // gradient.addColorStop(1, "rgba(255,255,255,0)");
 
-    //     ctx.fillStyle = gradient;
-    //     ctx.beginPath();
-    //     ctx.arc(47, 45, 40, 0, Math.PI * 2);
-    //     ctx.fill();
+        gradient.addColorStop(0, "rgba(255,255,255, 1)");
+        gradient.addColorStop(0.5, "rgba(255,255,255, 0.5)");
+        gradient.addColorStop(1, "rgba(255,255,255, 0)");
+        // gradient.addColorStop(0, 0.8);
+        // gradient.addColorStop(0.5, 0.5);
+        // gradient.addColorStop(1, 0);
+        
 
-    //     ctx.globalCompositeOperation = "source-over";
-    // }
+        ctx.globalCompositeOperation = "destination-out";
+
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(1000, 300, 100, 0, Math.PI * 2);
+        ctx.fill();
+
+        // ctx.globalCompositeOperation = "source-over";
+        // ctx.fillStyle = "white";
+        // ctx.beginPath();
+        // ctx.arc
+
+        ctx.globalCompositeOperation = "source-over";
+    }
 
     // test();
 });

@@ -99,6 +99,11 @@ header>.container
     margin-top: 0px;
 }
 
+#Introduction
+{
+    background-color: rgb(63 63 63);
+}
+
 #image-background
 {
     position: absolute;
@@ -114,7 +119,15 @@ header>.container
 {
     position: absolute;
     object-fit: cover;
-    filter: brightness(0.7);
+    width: 20%;
+    filter: brightness(1);
+    image-rendering: pixelated;
+}
+
+#image-background img:nth-child(1)
+{
+    left: 950px;
+    top: 250px;
 }
 
 #reveal-canvas
