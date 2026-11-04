@@ -15,9 +15,7 @@ body
 
 body
 {
-    color: white;
     position: relative;
-    /* height: 500px; */
 }
 
 a
@@ -99,9 +97,23 @@ header>.container
     margin-top: 0px;
 }
 
-#Introduction
+#introduction
 {
-    background-color: rgb(63 63 63);
+    margin-top: 0px;
+}
+
+#water-bg-container
+{
+    position: relative;
+    height: 500px;
+}
+
+#water-bg
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
 }
 
 #image-background
