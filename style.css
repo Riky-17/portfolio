@@ -95,17 +95,14 @@ header
 header>.container
 {
     margin-top: 0px;
-}
-
-#introduction
-{
-    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 #water-bg-container
 {
     position: relative;
-    height: 500px;
+    border-bottom: 3px solid white;
+    margin-bottom: 3em;
 }
 
 #water-bg
@@ -114,6 +111,12 @@ header>.container
     height: 100%;
     width: 100%;
     z-index: -1;
+}
+
+#introduction
+{
+    margin-top: 0px;
+    padding-top: 2em;
 }
 
 #image-background
@@ -265,35 +268,15 @@ ol ul > li + li::before
     margin: 0 .5em;
 }
 
+#social-icons
+{
+    margin-top: 2.5em;
+    padding-bottom: 3em;
+    display: flex;
+    justify-content: center;
+}
+
 .icon
 {
     margin: 0px 2em;
-}
-
-.ripple
-{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: .3px solid white;
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    pointer-events: none;
-    z-index: -1;
-    animation: ripple-effect 2.5s ease-out forwards;
-}
-
-@keyframes ripple-effect
-{
-    0%
-    {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: .7;
-    }
-
-    100%
-    {
-        transform: translate(-50%, -50%) scale(15);
-        opacity: 0;
-    }
 }

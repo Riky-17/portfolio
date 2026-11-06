@@ -110,9 +110,6 @@ window.addEventListener("load", () =>
             gradient.addColorStop(0, `rgba(255,255,255,${r.alpha})`);
             gradient.addColorStop(0.55, `rgba(255,255,255,${r.alpha * 0.5})`);
             gradient.addColorStop(1, "rgba(255,255,255,0)");
-            // gradient.addColorStop(0.95, "rgba(255,255,255,0)");
-            // gradient.addColorStop(0.95, "rgba(255,255,255,1)");
-            // gradient.addColorStop(1, "rgba(255,255,255,1)");
             
             ctx.globalCompositeOperation = "destination-out";
             ctx.fillStyle = gradient;
@@ -130,10 +127,6 @@ window.addEventListener("load", () =>
             borderGradient.addColorStop(0.5, `rgba(255,255,255,${1 - easeOut(age, rippleDuration)})`);
             borderGradient.addColorStop(1, `rgba(255,255,255,${1 - easeOut(age, rippleDuration)})`);
 
-            // borderGradient.addColorStop(0, "rgba(255,255,255,0)");
-            // borderGradient.addColorStop(0.4, "rgba(255,255,255,0.8)");
-            // borderGradient.addColorStop(1, "rgba(255,255,255,0)");
-
             ctx.globalCompositeOperation = "source-over";
             ctx.fillStyle = borderGradient;
             ctx.beginPath();
@@ -147,96 +140,4 @@ window.addEventListener("load", () =>
     }
 
     requestAnimationFrame(animate);
-
-    
-    function test()
-    {
-        ctx.fillStyle = "black";
-        ctx.fillRect(0, 0, width, height);
-        const gradient = ctx.createRadialGradient(
-            1000, 300, 50,
-            1000, 300, 100
-        );
-        
-        // gradient.addColorStop(0, `rgba(255,255,255,0.8)`);
-        // gradient.addColorStop(0.55, `rgba(255,255,255,0.5)`);
-        // gradient.addColorStop(1, "rgba(255,255,255,0)");
-
-        
-        // gradient.addColorStop(0, "rgba(255,255,255,0.8)");
-        // gradient.addColorStop(0.55, "rgba(255,255,255,0.4)");
-        // gradient.addColorStop(1, "rgba(255,255,255,0)");
-
-        gradient.addColorStop(0, "rgba(255,255,255, 1)");
-        gradient.addColorStop(0.5, "rgba(255,255,255, 0.5)");
-        gradient.addColorStop(1, "rgba(255,255,255, 0)");
-        // gradient.addColorStop(0, 0.8);
-        // gradient.addColorStop(0.5, 0.5);
-        // gradient.addColorStop(1, 0);
-        
-
-        ctx.globalCompositeOperation = "destination-out";
-
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(1000, 300, 100, 0, Math.PI * 2);
-        ctx.fill();
-
-        // ctx.globalCompositeOperation = "source-over";
-        // ctx.fillStyle = "white";
-        // ctx.beginPath();
-        // ctx.arc
-
-        ctx.globalCompositeOperation = "source-over";
-    }
-
-    // test();
 });
-
-// function canvasSize()
-// {
-//     canvas.width = canvas.scrollWidth;
-//     canvas.height = Math.max(
-//         document.body.scrollHeight, document.body.offsetHeight, 
-//         document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight
-//     );
-//     // ctx = canvas.getContext("2d");
-//     console.log(canvas.height);
-// }
-
-// window.addEventListener("load", canvasSize);
-
-// function resizeCanvas()
-// {
-//     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-//     width = window.innerWidth;
-//     height = window.innerHeight;
-
-//     canvas.width = width * dpr;
-//     canvas.height = height * dpr;
-
-//     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-// }
-
-// window.addEventListener("resize", resizeCanvas);
-// resizeCanvas();
-
-// requestAnimationFrame(animate);
-
-
-function createRipple(x, y)
-{
-    const ripple = document.createElement("div");
-    ripple.classList.add("ripple");
-
-    ripple.style.left = `${x}px`;
-    ripple.style.top = `${y}px`;
-
-    document.body.appendChild(ripple);
-
-    ripple.addEventListener("animationend", () =>
-    {
-        ripple.remove();
-    });
-}

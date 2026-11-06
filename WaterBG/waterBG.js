@@ -59,7 +59,6 @@ async function main()
     const vertexSource = await loadShader(new URL("./waterBG.vert", import.meta.url));
     const fragmentSource = await loadShader(new URL("./waterBG.frag", import.meta.url));
 
-    console.log("Hello");
     const program = createProgram(gl, vertexSource, fragmentSource);
 
     gl.useProgram(program);
