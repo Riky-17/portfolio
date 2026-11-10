@@ -73,8 +73,8 @@ window.addEventListener("load", () =>
 
     function animate(now)
     {
-        ctx.fillStyle = "rgb(14, 1, 55)";
-        ctx.fillRect(0, 0, width, height);
+        // ctx.fillStyle = "rgb(14, 1, 55)";
+        // ctx.fillRect(0, 0, width, height);
 
         for (let i = ripples.length - 1; i >= 0; i--) 
         {
