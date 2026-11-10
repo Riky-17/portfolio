@@ -1,9 +1,16 @@
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById("water-bg");
 const canvasParent = canvas.parentElement;
-canvas.width = canvasParent.clientWidth;
-canvas.height = canvasParent.clientHeight;
+resizeCanvas();
 const gl = canvas.getContext("webgl2");
+
+window.addEventListener("resize", resizeCanvas);
+
+function resizeCanvas()
+{
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight;
+}
 
 async function loadShader(url)
 {

@@ -4,6 +4,12 @@
     color: white;
     color-scheme: dark;
     --padder: 32px;
+
+    --frame-size: 68px;
+    --total-frames: 5;
+    --scale: 1.5;
+
+    --decorative-size: calc(var(--frame-size) * var(--scale));
 }
 
 html,
@@ -27,6 +33,11 @@ a
 a:hover
 {
     color: aqua;
+}
+
+section
+{
+    position: relative;
 }
 
 .row
@@ -128,6 +139,7 @@ header>.container
     overflow: hidden;
     background: black;
     pointer-events: none;
+    background-color: rgb(14, 1, 55);
 }
 
 #image-background img
@@ -193,7 +205,7 @@ header>.container
 
 .project-description:hover
 {
-    border-image-source: url(/Images/border.png);
+    border-image-source: url(./Images/border.png);
     border-image-slice: 64 fill;
     border-image-width: 64px;
     border-image-repeat: stretch;
@@ -268,6 +280,13 @@ ol ul > li + li::before
     margin: 0 .5em;
 }
 
+.contacts-container
+{
+    border-top: 3px solid white;
+    padding-top: 3em;
+    background-color: black;
+}
+
 #social-icons
 {
     margin-top: 2.5em;
@@ -279,4 +298,65 @@ ol ul > li + li::before
 .icon
 {
     margin: 0px 2em;
+}
+
+.decorative
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.decorative-img
+{
+    position: absolute;
+    overflow: hidden;
+    height: var(--decorative-size);
+    width: var(--decorative-size);
+    background-repeat: no-repeat;
+    background-size: calc(var(--decorative-size) * var(--total-frames)) auto;
+
+    animation: play-sprite 1s steps(var(--total-frames)) infinite;
+}
+
+.lilypad1
+{
+    background-image: url(./Images/lilypad1.png);
+}
+
+@keyframes play-sprite
+{
+    from
+    {
+        background-position: 0px 0px;
+    }
+    to
+    {
+        background-position: calc(-1 * var(--decorative-size) * var(--total-frames)) 0px;
+    }
+}
+
+.img1
+{
+    top: 50%;
+    left: 100px;
+}
+
+.img2
+{
+    top: 37%;
+    right: 85px;
+}
+
+.img3
+{
+    top: 70%;
+    right: 97px;
+}
+
+.img4
+{
+    top: 20%;
+    left: 76px;
 }

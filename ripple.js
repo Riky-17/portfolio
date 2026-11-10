@@ -1,24 +1,13 @@
+const body = document.body;
+const html = document.documentElement;
+
+/** @type {HTMLCanvasElement} */
+const canvas = document.getElementById("reveal-canvas");
+let ctx = canvas.getContext("2d");
+
 window.addEventListener("load", () =>
 {
-    const body = document.body;
-    const html = document.documentElement;
-
-    /** @type {HTMLCanvasElement} */
-    const canvas = document.getElementById("reveal-canvas");
-
-
-    canvas.width = Math.max(
-        body.scrollWidth, body.offsetWidth, 
-        html.clientWidth, html.scrollWidth, html.offsetWidth
-    );
-
-    canvas.height = Math.max(
-        body.scrollHeight, body.offsetHeight, 
-        html.clientHeight, html.scrollHeight, html.offsetHeight
-    );
-
-    let ctx = canvas.getContext("2d");
-    
+    resizeCanvas();
     let width = canvas.width;
     let height = canvas.height;
     let lastX = null;
@@ -84,7 +73,7 @@ window.addEventListener("load", () =>
 
     function animate(now)
     {
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "rgb(14, 1, 55)";
         ctx.fillRect(0, 0, width, height);
 
         for (let i = ripples.length - 1; i >= 0; i--) 
@@ -141,3 +130,18 @@ window.addEventListener("load", () =>
 
     requestAnimationFrame(animate);
 });
+
+window.addEventListener("resize", resizeCanvas);
+
+function resizeCanvas()
+{
+    canvas.width = Math.max(
+        body.scrollWidth, body.offsetWidth, 
+        html.clientWidth, html.scrollWidth, html.offsetWidth
+    );
+
+    canvas.height = Math.max(
+        body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight
+    );
+}
