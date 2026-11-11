@@ -4,9 +4,7 @@
     color: white;
     color-scheme: dark;
     --padder: 32px;
-    --extra-margin: calc(var(--decorative-size) + var(--min-deco-pos) + var(--max-deco-pos));
-    --min-deco-pos: 10px;
-    --max-deco-pos: 15px;
+    --extra-margin: calc(var(--decorative-size));
 
     --frame-size: 68px;
     --total-frames: 5;
@@ -80,8 +78,10 @@ section
 {
     max-width: 1300px;
     padding-inline: var(--padder);
-    margin: 4em;
-    margin-inline: max(var(--extra-margin), 15vw);
+    /* font-size: 2rem; */
+    margin-bottom: 4em;
+    /* margin-inline: var(--extra-margin); */
+    margin-inline: 5vw;
 }
 
 .small-container
@@ -190,14 +190,9 @@ img.monster
     row-gap: 1em;
 }
 
-.systems-container
-{
-    grid-template-columns: 1fr 1fr;
-}
-
 .project-container
 {
-    width: max(45%, 235px);
+    width: 500px;
     margin-bottom: 2em;
     break-inside: avoid;
     page-break-inside: avoid;
@@ -211,6 +206,11 @@ img.monster
 .project-container:hover
 {
     transform: scale(1.05);
+}
+
+.project-description
+{
+    font-size: 1.5rem;
 }
 
 .project-description:hover
@@ -255,14 +255,14 @@ img.monster
 
 .skill-card
 {
-    width: max(30%, 217px);
+    width: 40%;
     background-color: black;
     border: solid;
     border-width: 2px;
     border-color: white;
     border-radius: 5px;
     text-align: center;
-    font-size: clamp(0.5rem, 10vw, 1rem);
+    /* font-size: 1.5rem; */
 }
 
 #skills
