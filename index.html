@@ -13,9 +13,15 @@
         </header>
         <main>
             <div id="image-background">
-                <img src="Images/tentacle monster.png" alt="monster" class="monster1">
-                <img src="Images/tentacle monster.png" alt="monster" class="monster2">
-                <img src="Images/tentacle monster.png" alt="monster" class="monster3">
+                <img src="Images/tentacle monster.png" alt="monster" class="monster monster1">
+                <img src="Images/tentacle monster.png" alt="monster" class="monster monster2">
+                <img src="Images/tentacle monster.png" alt="monster" class="monster monster3">
+                <img src="Images/tentacle monster.png" alt="monster" class="monster monster4">
+                <img src="Images/tentacle monster.png" alt="monster" class="monster monster5">
+                <img src="Images/tentacle monster.png" alt="monster" class="monster monster6">
+                <img src="Images/tentacle monster.png" alt="monster" class="monster monster7">
+                <img src="Images/tentacle monster.png" alt="monster" class="monster monster8">
+                <img src="Images/tentacle monster.png" alt="monster" id="bg-skill-monster">
             </div>
             <canvas id="reveal-canvas"></canvas>
             <div id="page-container">
@@ -35,6 +41,7 @@
                         <div class="lotus decorative-img img4"></div>
                         <div class="lotus decorative-img img5"></div>
                         <div class="lilypad2 decorative-img img6"></div>
+                        <div class="lotus decorative-img img7"></div>
                     </div>
                     <div class="row center align-center">
                         <div class="lotus normal-img"></div>
@@ -82,7 +89,7 @@
                     </div>
                     <div class="container">
                         <h2>Systems</h2>
-                        <div class="wrap-row container systems-container">
+                        <div class="wrap-row systems-container">
                             <div class="project-container">
                                 <article id="Project">
                                     <div class="center">
@@ -124,7 +131,11 @@
                             <p>Having served as the sole programmer on multiple game jam projects, I'm comfortable implementing gameplay systems under tight deadlines.</p>
                         </div>
                     </div>
-                    <div class="container border">
+                    <div id="skills" class="border">
+                        <div class="lotus decorative-img top-left"></div>
+                        <div class="lilypad1 decorative-img bot-left"></div>
+                        <div class="lilypad1 decorative-img top-right"></div>
+                        <div class="lilypad2 decorative-img bot-right"></div>
                         <h1 class="center">Skills</h1>
                         <hr class="main-divider">
                         <ol>
@@ -146,7 +157,7 @@
                                 <li>Pathfinding</li>
                                 <li>Unity Job System</li>
                                 <li>Multithreading</li>
-                                <li>Compute SHaders</li>
+                                <li>Compute Shaders</li>
                                 <li>Procedural Generation</li>
                                 <li>Wave Function Collapse</li>
                                 <li>Behaviour Tree</li>
@@ -194,6 +205,7 @@
             </div>
         </main>
     </body>
-    <script src="ripple.js"></script>
-    <script type="module" src="WaterBG/waterBG.js"></script>
+    <script src="/Scripts/monsterPositioner.js"></script>
+    <script src="/Scripts/ripple.js"></script>
+    <!-- <script type="module" src="WaterBG/waterBG.js"></script> -->
 </html>

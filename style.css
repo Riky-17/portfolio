@@ -4,6 +4,9 @@
     color: white;
     color-scheme: dark;
     --padder: 32px;
+    --extra-margin: calc(var(--decorative-size) + var(--min-deco-pos) + var(--max-deco-pos));
+    --min-deco-pos: 10px;
+    --max-deco-pos: 15px;
 
     --frame-size: 68px;
     --total-frames: 5;
@@ -76,7 +79,7 @@ section
     max-width: 1300px;
     padding-inline: var(--padder);
     margin: 4em;
-    margin-inline: auto;
+    margin-inline: max(var(--extra-margin), 15vw);
 }
 
 .small-container
@@ -152,9 +155,13 @@ header>.container
 {
     position: absolute;
     object-fit: cover;
-    width: 20%;
     filter: brightness(1);
     image-rendering: pixelated;
+}
+
+img.monster
+{
+    height: 250px;
 }
 
 #reveal-canvas
@@ -181,11 +188,6 @@ header>.container
     row-gap: 1em;
 }
 
-.games-container
-{
-    margin: 0px max(calc(var(--decorative-size) + 10px), 2vw);
-}
-
 .systems-container
 {
     grid-template-columns: 1fr 1fr;
@@ -193,6 +195,7 @@ header>.container
 
 .project-container
 {
+    width: max(45%, 235px);
     margin-bottom: 2em;
     break-inside: avoid;
     page-break-inside: avoid;
@@ -222,7 +225,6 @@ header>.container
 #Project
 {
     height: 100%;
-    width: 450px;
     display: flex;
     flex-direction: column;
 }
@@ -251,13 +253,47 @@ header>.container
 
 .skill-card
 {
-    width: 30%;
+    width: max(30%, 217px);
     background-color: black;
     border: solid;
     border-width: 2px;
     border-color: white;
     border-radius: 5px;
     text-align: center;
+    font-size: clamp(0.5rem, 10vw, 1rem);
+}
+
+#skills
+{
+    position: relative;
+    padding: 0px var(--extra-margin);
+    width: max(800px, 70%);
+    margin-inline: auto;
+    margin-bottom: 3em;
+}
+
+.top-left
+{
+    top: 0px;
+    left: 0px;
+}
+
+.bot-left
+{
+    bottom: 0px;
+    left: 0px;
+}
+
+.top-right
+{
+    top: 0px;
+    right: 0px;
+}
+
+.bot-right
+{
+    bottom: 0px;
+    right: 0px;
 }
 
 .main-divider
@@ -279,7 +315,7 @@ ol ul
     list-style: none;;
 }
 
-ol ul > li + li::before
+ol ul > li:not(:last-child)::after
 {
     content: "·";
     margin: 0 .5em;
@@ -397,24 +433,58 @@ div.normal-img
 
 .img6
 {
-    top: 80%;
+    bottom: 20%;
     left: 85px;
+}
+
+.img7
+{
+    bottom: 0px;
+    right: 50px;
 }
 
 .monster1
 {
-    top: 400px;
+    top: 15%;
     right: 100px;
 }
 
 .monster2
 {
-    top: 1000px;
+    top: 23%;
     left: 80px;
 }
 
 .monster3
 {
-    top: 1500px;
+    top: 37%;
     left: 120px;
+}
+
+.monster4
+{
+    top: 40%;
+    right: 75px;
+}
+
+.monster5
+{
+    top: 58%;
+}
+
+.monster6
+{
+    top: 63%;
+    right: 120px;
+}
+
+.monster7
+{
+    top: 72%;
+    left: 95px;
+}
+
+.monster8
+{
+    top: 350px;
 }
