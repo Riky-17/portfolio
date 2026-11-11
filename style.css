@@ -13,6 +13,8 @@
     --scale: 2;
 
     --decorative-size: calc(var(--frame-size) * var(--scale));
+
+    --border-width: 2px;
 }
 
 html,
@@ -70,7 +72,7 @@ section
 .border
 {
     border: solid;
-    border-width: 2px;
+    border-width: var(--border-width);
     border-color: white;
 }
 
@@ -267,7 +269,7 @@ img.monster
 {
     position: relative;
     padding: 0px var(--extra-margin);
-    width: max(800px, 70%);
+    width: clamp(50vw, 1000px, calc(95vw - (var(--extra-margin) * 2) - (var(--border-width) * 2)));
     margin-inline: auto;
     margin-bottom: 3em;
 }
