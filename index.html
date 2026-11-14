@@ -4,11 +4,20 @@
         <title>Riccardo Spadaro</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/407aa751ac.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <div class="container row center">
-                <p>Riccardo Spadaro</p>
+                <h2>Riccardo Spadaro</h2>
+                <div id="page-jumpers" class="row">
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contacts">Contacts</a>
+                    <a href="">Resume</a>
+                </div>
             </div>
         </header>
         <main>
@@ -30,10 +39,10 @@
                     <div id="introduction" class="container column center">
                         <h1>Riccardo Spadaro</h1>
                         <h3>Game Programmer | Unity Engine</h3>
-                        <p>Hi, my name is Riccardo and I am a Unity game programmer with experience in creating games in C#, I specialize in building game mechanics and systems and I also have a strong understanding of physics, math and game AI.</p>
+                        <p>Hi, I'm Riccardo, a Unity game programmer specializing in C# gameplay development. I enjoy designing and implementing gameplay mechanics, complex systems, and algorithms, with a strong foundation in physics, mathematics, and game AI.</p>
                     </div>
                 </div>
-                <section>
+                <section id="projects">
                     <div class="decorative">
                         <div class="lilypad1 decorative-img img1"></div>
                         <div class="lilypad2 decorative-img img2"></div>
@@ -57,8 +66,11 @@
                                         <img src="Images/Nazrin's Quest Cover.png" alt="Nazrin's Quest">
                                     </div>
                                     <div class="project-description">
-                                        <a href="Projects/Frogeth.html" class="project-name stretch">Nazrin's Quest</a>
-                                        <p>Description.</p>
+                                        <a href="https://asura-itchio.itch.io/nazrins-quest" class="project-name stretch">
+                                            <h3>Nazrin's Quest</h3>
+                                        </a>
+                                        <p>A vertical shooter game, where you play as Nazrin, a character of the Touhou game genre.</p>
+                                        <p>Game jam entry for the Touhou Game jam, I worked as the sole game programmer.</p>
                                     </div>
                                 </article>
                             </div>
@@ -68,8 +80,11 @@
                                         <img src="Images/Gwumbus Cover.png" alt="Gwumbus">
                                     </div>
                                     <div class="project-description">
-                                        <a href="Projects/Frogeth.html" class="project-name stretch">Gwumbus</a>
+                                        <a href="https://asura-itchio.itch.io/gwumbus" class="project-name stretch">
+                                            <h3>Gwumbus</h3>
+                                        </a>
                                         <p>An action 2D game about a warrior trying to defeat death.</p>
+                                        <p>Game jam entry where I was responsible for nearly all programming, except for UI development.</p>
                                     </div>
                                 </article>
                             </div>
@@ -79,9 +94,11 @@
                                         <img src="Images/Frogeth Cover.png" alt="Frogeth">
                                     </div>
                                     <div class="project-description">
-                                        <a href="https://asura-itchio.itch.io/frogeth" class="project-name stretch">Frogeth</a>
+                                        <a href="https://asura-itchio.itch.io/frogeth" class="project-name stretch">
+                                            <h3>Frogeth</h3>
+                                        </a>
                                         <p>A cozy puzzle game about a frog trying to reach his love.</p>
-                                        <ul></ul>
+                                        <p>Game jam entry where I worked and was responsible for all the programming.</p>
                                     </div>
                                 </article>
                             </div>
@@ -96,8 +113,10 @@
                                         <img src="Images/Pathfinder.png" alt="A* Pathfinder">
                                     </div>
                                     <div class="project-description">
-                                        <h3 class="project-name stretch">A* Pathfinder</h3>
-                                        <p>A* Pathfinder algorithm using Unity's Job System to multithread the algorithm.</p>
+                                        <a href="https://github.com/Riky-17/PathfinderUnity" class="project-name stretch">
+                                            <h3>A* Pathfinder</h3>
+                                        </a>
+                                        <p>A* pathfinding algorithm implemented using Unity's Job System for multithreaded execution.</p>
                                     </div>
                                 </article>
                             </div>
@@ -107,15 +126,17 @@
                                         <img src="Images/WFC.png" alt="Wave Function Collapse">
                                     </div>
                                     <div class="project-description">
-                                        <h3 class="project-name stretch">Wave Function Collapse</h3>
-                                        <p>Wave Function Collapse algorithm multithreaded using compute shaders.</p>
+                                        <a href="https://github.com/Riky-17/WaveFunctionCollapseUnity"  class="project-name stretch">
+                                            <h3>Wave Function Collapse</h3>
+                                        </a>
+                                        <p>Multithreaded Wave Function Collapse algorithm implemented using compute shaders.</p>
                                     </div>
                                 </article>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section>
+                <section id="skills">
                     <h1 class="center">What I bring</h1>
                     <div class="container wrap-row">
                         <div class="skill-card small-container">
@@ -131,7 +152,7 @@
                             <p>Having served as the sole programmer on multiple game jam projects, I'm comfortable implementing gameplay systems under tight deadlines.</p>
                         </div>
                     </div>
-                    <div id="skills" class="border">
+                    <div id="skills-container" class="border">
                         <div class="lotus decorative-img top-left"></div>
                         <div class="lilypad1 decorative-img bot-left"></div>
                         <div class="lilypad1 decorative-img top-right"></div>
@@ -188,10 +209,13 @@
                         </ol>
                     </div>
                 </section>
-                <section>
+                <section id="contacts">
                     <div class="contacts-container">
                         <h2 class="center">Get in touch!</h2>
                         <h3 class="center">riccardospadaro58@gmail.com</h3>
+                        <a href="">
+                            <h2 class="center">Resume</h2>
+                        </a>
                         <div id="social-icons">
                             <a href="https://riki-17.itch.io/" class=" icon">
                                 <i class="fa-brands fa-itch-io fa-3x"></i>
@@ -207,5 +231,5 @@
     </body>
     <script src="./Scripts/monsterPositioner.js"></script>
     <script src="./Scripts/ripple.js"></script>
-    <!-- <script type="module" src="WaterBG/waterBG.js"></script> -->
+    <script type="module" src="./WaterBG/waterBG.js"></script>
 </html>

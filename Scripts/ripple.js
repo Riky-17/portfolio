@@ -5,23 +5,21 @@ const html = document.documentElement;
 const canvas = document.getElementById("reveal-canvas");
 let ctx = canvas.getContext("2d");
 
+const ripples = [];
+
+let lastX = null;
+let lastY = null;
+let lastTime = null;
+
+let lastRippleTime = 0;
+
 window.addEventListener("load", () =>
 {
     resizeCanvas();
     let width = canvas.width;
     let height = canvas.height;
-    let lastX = null;
-    let lastY = null;
-    let lastTime = null;
-    
-    const SPEED_THRESHOLD = 0.8;
-    const MIN_RIPPLE_INTERVAL = 1000;
-    const RIPPLE_RADIUS = 20;
     const RIPPLE_BORDER_RADIUS = 2; 
-    let lastRippleTime = 0;
     
-    const ripples = [];
-
     function easeIn(t, maxT = 1)
     {
         return t * t / (maxT * maxT);
@@ -32,49 +30,14 @@ window.addEventListener("load", () =>
         return 1 - Math.pow(1 - t / maxT, 2);
     }
 
-    document.addEventListener("mousemove", (event) =>
-    {
-        const now = performance.now();
-        const x = event.pageX;
-        const y = event.pageY;
-
-        if(lastX !== null && lastTime !== null)
-        {
-            const dx = x - lastX;
-            const dy = y - lastY;
-            const dt =  now - lastTime;
-
-            if(dt > 0)
-            {
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                const speed = distance / dt;
-
-                if(speed > SPEED_THRESHOLD && now - lastRippleTime > MIN_RIPPLE_INTERVAL)
-                {
-                    ripples.push(
-                    {
-                        x,
-                        y,
-                        radius: RIPPLE_RADIUS,
-                        alpha: 0.8,
-                        born: now
-                    });
-
-                    // createRipple(x, y);
-                    lastRippleTime = now;
-                }
-            }
-        }
-
-        lastX = x;
-        lastY = y;
-        lastTime = now;
-    });
+    document.addEventListener("mousemove", mouseRipple);
+    document.addEventListener("touchmove", touchRipple, {passive: true});
+    document.addEventListener("touchstart", touchRipple, {passive: true});
 
     function animate(now)
     {
-        // ctx.fillStyle = "rgb(14, 1, 55)";
-        // ctx.fillRect(0, 0, width, height);
+        ctx.fillStyle = "rgb(14, 1, 55)";
+        ctx.fillRect(0, 0, width, height);
 
         for (let i = ripples.length - 1; i >= 0; i--) 
         {
@@ -90,7 +53,7 @@ window.addEventListener("load", () =>
                 ripples.splice(i, 1);
                 continue;
             }
-
+            
             const gradient = ctx.createRadialGradient(
                 r.x, r.y, r.radius * 0.15,
                 r.x, r.y, r.radius
@@ -128,8 +91,62 @@ window.addEventListener("load", () =>
         requestAnimationFrame(animate);
     }
 
-    // requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
 });
+
+function touchRipple(event)
+{
+    const touch = event.changedTouches[0];
+    const x = touch.clientX;
+    const y = touch.clientY;
+
+    createRipple(x, y, performance.now());
+}
+
+function mouseRipple(event)
+{
+    const SPEED_THRESHOLD = 0.8;
+    const MIN_RIPPLE_INTERVAL = 1000;
+    
+    const now = performance.now();
+    const x = event.pageX;
+    const y = event.pageY;
+    
+    if(lastX !== null && lastTime !== null)
+    {
+        const dx = x - lastX;
+        const dy = y - lastY;
+        const dt =  now - lastTime;
+
+        if(dt > 0)
+        {
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const speed = distance / dt;
+
+            if(speed > SPEED_THRESHOLD && now - lastRippleTime > MIN_RIPPLE_INTERVAL)
+            {
+                createRipple(x, y, now);
+                lastRippleTime = now;
+            }
+        }
+    }
+
+    lastX = x;
+    lastY = y;
+    lastTime = now;
+}
+
+function createRipple(x, y, t)
+{
+    ripples.push(
+    {
+        x,
+        y,
+        radius: 20,
+        alpha: 0.8,
+        born: t
+    });
+}
 
 window.addEventListener("resize", resizeCanvas);
 

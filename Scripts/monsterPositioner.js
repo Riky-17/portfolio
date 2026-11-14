@@ -1,5 +1,5 @@
 const monster = document.getElementById("bg-skill-monster");
-const skillsElement = document.getElementById("skills");
+const skillsElement = document.getElementById("skills-container");
 
 function positionMonster()
 {

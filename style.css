@@ -25,6 +25,7 @@ body
 body
 {
     position: relative;
+    font-family: "Geist Mono", monospace;
 }
 
 a
@@ -41,6 +42,7 @@ a:hover
 section
 {
     position: relative;
+    scroll-margin-top: calc(max(3vh, 80px) + 20px);
 }
 
 .row
@@ -107,10 +109,12 @@ section
 
 header
 {
+    height: max(3vh, 80px);
     z-index: 10;
     position: sticky;
     top: 0px;
-    background-color: #5430cf8c;
+    /* background-color: #5430cf8c; */
+    background-color: rgba(0, 0, 0, 0.597);
     backdrop-filter: blur(14px)saturate(1.4);
 }
 
@@ -118,6 +122,25 @@ header>.container
 {
     margin-top: 0px;
     margin-bottom: 0px;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+#page-jumpers
+{
+    align-items: center;
+    height: 100%;
+}
+
+#page-jumpers a
+{
+    margin-inline: 20px;
+}
+
+#page-jumpers a:hover
+{
+    text-decoration: underline;
 }
 
 #water-bg-container
@@ -141,6 +164,11 @@ header>.container
     padding-top: 2em;
 }
 
+#introduction
+{
+    font-size: 1.15rem;
+}
+
 #image-background
 {
     position: absolute;
@@ -150,14 +178,15 @@ header>.container
     overflow: hidden;
     background: black;
     pointer-events: none;
-    background-color: rgb(14, 1, 55);
+    /* background-color: rgb(14, 1, 55); */
+    background-color: black;
 }
 
 #image-background img
 {
     position: absolute;
     object-fit: cover;
-    filter: brightness(1);
+    filter: brightness(0.7);
     image-rendering: pixelated;
 }
 
@@ -208,11 +237,6 @@ img.monster
     transform: scale(1.05);
 }
 
-.project-description
-{
-    font-size: 1.5rem;
-}
-
 .project-description:hover
 {
     border-image-source: url(./Images/border.png);
@@ -238,19 +262,15 @@ img.monster
     width: 100%;
 }
 
-#Project a
-{
-    padding-top: 1em;
-}
-
 .project-description
 {
     min-height: 150px;
     flex: 1;
-    padding: 0px 64px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 1rem;
 }
 
 .skill-card
@@ -265,7 +285,7 @@ img.monster
     /* font-size: 1.5rem; */
 }
 
-#skills
+#skills-container
 {
     position: relative;
     padding: 0px var(--extra-margin);
@@ -328,6 +348,11 @@ ol ul > li:not(:last-child)::after
     border-top: 3px solid white;
     padding-top: 3em;
     background-color: black;
+}
+
+.contacts-container > a > h2
+{
+    margin-top: 30px;
 }
 
 #social-icons
