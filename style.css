@@ -169,6 +169,24 @@ header>.container
     font-size: 1.15rem;
 }
 
+#introduction a
+{
+    margin-top: 2em;
+    /* background-color: black; */
+    background-color: rgb(40, 128, 67);
+    display: inline-block;
+    padding: 1em 1.5em;
+    border-radius: 50px;
+    transition: transform 0.15s ease;
+}
+
+#introduction a:hover
+{
+    transform: scale(1.10);
+    /* background-color: rgb(241, 115, 189); */
+    color: black;
+}
+
 #image-background
 {
     position: absolute;
@@ -513,5 +531,5 @@ div.normal-img
 
 .monster8
 {
-    top: 350px;
+    top: 600px;
 }

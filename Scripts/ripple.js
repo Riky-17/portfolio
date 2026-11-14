@@ -31,7 +31,6 @@ window.addEventListener("load", () =>
     }
 
     document.addEventListener("mousemove", mouseRipple);
-    document.addEventListener("touchmove", touchRipple, {passive: true});
     document.addEventListener("touchstart", touchRipple, {passive: true});
 
     function animate(now)
@@ -97,8 +96,8 @@ window.addEventListener("load", () =>
 function touchRipple(event)
 {
     const touch = event.changedTouches[0];
-    const x = touch.clientX;
-    const y = touch.clientY;
+    const x = touch.pageX;
+    const y = touch.pageY;
 
     createRipple(x, y, performance.now());
 }

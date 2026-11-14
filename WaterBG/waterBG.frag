@@ -115,17 +115,36 @@ float fbmVoronoi(vec2 p)
     return total;
 }
 
+vec3 colorLerp(float t, vec3 colors[3])
+{
+    t = clamp(t, 0.0, 1.0);
+
+    float tScaled = t * 2.0;
+
+    int index = int(floor(tScaled));
+    index = min(1, index);
+    float tLocal = fract(tScaled);
+
+    return mix(colors[index], colors[index + 1], tLocal);
+}
+
 void main()
 {
     vec2 uv = gl_FragCoord.xy / u_resolution;
 
     vec2 p = uv * vec2(6.0, 6.0);
-    vec3 purple = vec3(0.365, 0.125, 0.874);
 
-    vec2 displaced = vec2(fbmPerlin(p + 0.5 * u_time), fbmPerlin(p + 0.5 * u_time));
+    vec2 displaced = vec2(fbmPerlin(p + 0.5 * u_time), fbmPerlin(p + 0.25 * u_time));
 
     float pattern = fbmVoronoi(p + 0.5 * displaced);
 
-    vec3 color = vec3(pattern * purple);
+    vec3 colors[3] = vec3[]
+    (
+        vec3(0.0, 0.584, 0.623),
+        vec3(0.098, 0.016, 0.376),
+        vec3(0.365, 0.125, 0.874)
+    );
+
+    vec3 color = colorLerp(pattern, colors);
     outColor = vec4(color, 1.0);
 }
