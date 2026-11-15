@@ -4,6 +4,7 @@
     color: white;
     color-scheme: dark;
     --padder: 32px;
+    /* --margin-container: clamp(5vw, ) */
     --extra-margin: calc(var(--decorative-size));
 
     --frame-size: 68px;
@@ -83,7 +84,7 @@ section
     /* font-size: 2rem; */
     margin-bottom: 4em;
     /* margin-inline: var(--extra-margin); */
-    margin-inline: 5vw;
+    margin-inline: auto;
 }
 
 .small-container

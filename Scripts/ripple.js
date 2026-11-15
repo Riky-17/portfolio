@@ -5,6 +5,9 @@ const html = document.documentElement;
 const canvas = document.getElementById("reveal-canvas");
 let ctx = canvas.getContext("2d");
 
+let width = canvas.width;
+let height = canvas.height;
+
 const ripples = [];
 
 let lastX = null;
@@ -16,8 +19,6 @@ let lastRippleTime = 0;
 window.addEventListener("load", () =>
 {
     resizeCanvas();
-    let width = canvas.width;
-    let height = canvas.height;
     const RIPPLE_BORDER_RADIUS = 2; 
     
     function easeIn(t, maxT = 1)
@@ -155,9 +156,11 @@ function resizeCanvas()
         body.scrollWidth, body.offsetWidth, 
         html.clientWidth, html.scrollWidth, html.offsetWidth
     );
-
+    
     canvas.height = Math.max(
         body.scrollHeight, body.offsetHeight, 
         html.clientHeight, html.scrollHeight, html.offsetHeight
     );
+    width = canvas.width;
+    height = canvas.height;
 }
