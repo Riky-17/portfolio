@@ -1,8 +1,15 @@
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById("water-bg");
 const canvasParent = canvas.parentElement;
-resizeCanvas();
+
+canvas.width = canvasParent.clientWidth;
+canvas.height = canvasParent.clientHeight;
+
 const gl = canvas.getContext("webgl2");
+let resolutionLocation = null;
+
+resizeCanvas();
+
 
 window.addEventListener("resize", resizeCanvas);
 
@@ -10,6 +17,13 @@ function resizeCanvas()
 {
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight;
+
+    if(resolutionLocation !== null)
+    {
+        gl.uniform2fv(resolutionLocation, [canvas.width, canvas.height]);
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        // console.log(canvas.width, canvas.height);
+    }
 }
 
 async function loadShader(url)
@@ -93,9 +107,10 @@ async function main()
 
     const timeLocation = gl.getUniformLocation(program, "u_time");
 
-    const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+    resolutionLocation = gl.getUniformLocation(program, "u_resolution");
 
     gl.uniform2fv(resolutionLocation, [canvas.width, canvas.height]);
+    // console.log(canvas.width, canvas.height);
 
     function render(time)
     {
