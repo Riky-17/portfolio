@@ -238,6 +238,12 @@ img.monster
     row-gap: 1em;
 }
 
+ #projects-type
+ {
+    margin-bottom: 2.5em;
+    margin-left: 0.5em;
+ }
+
 .project-container
 {
     width: 500px;
